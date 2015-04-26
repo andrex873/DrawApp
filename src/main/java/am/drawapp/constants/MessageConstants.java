@@ -15,6 +15,8 @@ public class MessageConstants {
     
     public static final String ERROR_COMMAND_INVALID_FORMAT = "The command have an invalid format.";
     
+    public static final String ERROR_COMMAND_CANVAS_NOT_INITIALIZED = "The canvas is not initialized yet.";
     
+    public static final String ERROR_SHAPE_RECTANGLE_CORDINATES = "The second one coordinate is before or above the first one.";
     
 }

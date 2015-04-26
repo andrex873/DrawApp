@@ -16,8 +16,14 @@ public class Coordinate {
         this.pointY = pointY;
     }
 
-    
-    
+    public int getPointX() {
+        return pointX;
+    }
+
+    public int getPointY() {
+        return pointY;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;

@@ -62,4 +62,8 @@ public class Board {
 
     }
 
+    public boolean isInitialized() {
+        return initialized;
+    }
+    
 }

@@ -24,7 +24,7 @@ public enum StaticCell implements Cell{
             return "|";
         }
     },
-    SHAPE_LINE{
+    SHAPE_CHAR{
         @Override
         public String toString() {
             return "x";
