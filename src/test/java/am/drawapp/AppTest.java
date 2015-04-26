@@ -1,5 +1,8 @@
 package am.drawapp;
 
+import am.drawapp.elements.Coordinate;
+import java.util.HashMap;
+import java.util.Map;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

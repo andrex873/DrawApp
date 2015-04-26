@@ -5,7 +5,7 @@ import am.drawapp.elements.Board;
 import am.drawapp.exception.CommandException;
 
 /**
- *
+ * 
  * @author amendez
  */
 public interface DrawCommand {

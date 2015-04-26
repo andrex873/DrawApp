@@ -7,15 +7,22 @@ package am.drawapp.elements;
  */
 public class Coordinate {
     
-    private int xPoint;
+    private int pointX;
     
-    private int yPoint;
+    private int pointY;
 
+    public Coordinate(int pointX, int pointY) {
+        this.pointX = pointX;
+        this.pointY = pointY;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 53 * hash + this.xPoint;
-        hash = 53 * hash + this.yPoint;
+        hash = 53 * hash + this.pointX;
+        hash = 53 * hash + this.pointY;
         return hash;
     }
 
@@ -28,10 +35,10 @@ public class Coordinate {
             return false;
         }
         final Coordinate other = (Coordinate) obj;
-        if (this.xPoint != other.xPoint) {
+        if (this.pointX != other.pointX) {
             return false;
         }
-        if (this.yPoint != other.yPoint) {
+        if (this.pointY != other.pointY) {
             return false;
         }
         return true;

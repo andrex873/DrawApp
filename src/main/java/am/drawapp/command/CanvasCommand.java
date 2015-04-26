@@ -3,6 +3,7 @@ package am.drawapp.command;
 
 import am.drawapp.elements.Board;
 import am.drawapp.exception.CommandException;
+import am.drawapp.shape.BorderShape;
 import java.util.regex.Pattern;
 
 /**
@@ -29,7 +30,7 @@ public class CanvasCommand extends AbstractCommand{
     public void extract(String inputCommand) throws CommandException {
         // Validate the command format
         if(isInvalid(inputCommand)){
-            throw new CommandException("The command does't have the a valid format. ");
+            throw new CommandException("The command does't have the a valid format.");
         }
         String[] parts = inputCommand.split(" ");
         this.width = Integer.parseInt(parts[WIDTH_POSITION]);
@@ -41,17 +42,11 @@ public class CanvasCommand extends AbstractCommand{
         return !patter.matcher(inputCommand).matches();
     }
     
+    @Override
     public void display(Board board) {
         board.init(width, height);
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+        board.addShape(new BorderShape(width, height));
+        board.display();
     }
 
 }
