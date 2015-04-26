@@ -8,7 +8,9 @@ package am.drawapp.command;
 
 import am.drawapp.constants.MessageConstants;
 import am.drawapp.elements.Board;
+import am.drawapp.elements.Coordinate;
 import am.drawapp.exception.CommandException;
+import am.drawapp.shape.LineShape;
 import java.util.regex.Pattern;
 
 /**
@@ -27,15 +29,10 @@ public class LineCommand extends AbstractCommand{
     
     private final int END_POINT_Y_POSITION = 4;
     
-    private int startPointX;
+    private Coordinate startCoordinate;
     
-    private int startPointY;
+    private Coordinate endCoordinate;
     
-    private int endPointX;
-    
-    private int endPointY;
-    
-
     public LineCommand(String inputCommand) {
         super(inputCommand);
     }
@@ -45,10 +42,13 @@ public class LineCommand extends AbstractCommand{
             throw new CommandException(MessageConstants.ERROR_COMMAND_INVALID_FORMAT);
         }
         String[] parts = inputCommand.split(" ");
-        startPointX = Integer.parseInt(parts[START_POINT_X_POSITION]);
-        startPointY = Integer.parseInt(parts[START_POINT_Y_POSITION]);
-        endPointX = Integer.parseInt(parts[END_POINT_X_POSITION]);
-        endPointY = Integer.parseInt(parts[END_POINT_Y_POSITION]);
+        int startPointX = Integer.parseInt(parts[START_POINT_X_POSITION]);
+        int startPointY = Integer.parseInt(parts[START_POINT_Y_POSITION]);
+        int endPointX = Integer.parseInt(parts[END_POINT_X_POSITION]);
+        int endPointY = Integer.parseInt(parts[END_POINT_Y_POSITION]);
+        startCoordinate = new Coordinate(startPointX, startPointY);
+        endCoordinate = new Coordinate(endPointX, endPointY);
+        
     }
     
     private boolean isInvalid(String inputCommand) {
@@ -56,24 +56,13 @@ public class LineCommand extends AbstractCommand{
         return !patter.matcher(inputCommand).matches();
     }
 
+    @Override
     public void display(Board board) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getStartPointX() {
-        return startPointX;
-    }
-
-    public int getStartPointY() {
-        return startPointY;
-    }
-
-    public int getEndPointX() {
-        return endPointX;
-    }
-
-    public int getEndPointY() {
-        return endPointY;
+        if (!board.isInitialized()) {
+            throw new CommandException(MessageConstants.ERROR_COMMAND_CANVAS_NOT_INITIALIZED);
+        }
+        board.addShape(new LineShape(startCoordinate, endCoordinate));
+        board.display();
     }
 
 }
