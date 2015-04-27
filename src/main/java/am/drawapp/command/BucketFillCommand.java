@@ -57,7 +57,7 @@ public class BucketFillCommand extends AbstractCommand {
     @Override
     public void extract(String inputCommand) throws CommandException {
         if (isInvalid(inputCommand)) {
-            throw new CommandException("The command does't have the a valid format. ");
+            throw new CommandException(MessageConstants.ERROR_COMMAND_INVALID_FORMAT);
         }
         String[] parts = inputCommand.split(" ");
         int pointX = Integer.parseInt(parts[X_POSITION]);

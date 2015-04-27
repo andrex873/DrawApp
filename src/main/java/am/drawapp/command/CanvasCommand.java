@@ -1,5 +1,6 @@
 package am.drawapp.command;
 
+import am.drawapp.constants.MessageConstants;
 import am.drawapp.elements.Board;
 import am.drawapp.exception.CommandException;
 import am.drawapp.shape.BorderShape;
@@ -49,7 +50,7 @@ public class CanvasCommand extends AbstractCommand{
     public void extract(String inputCommand) throws CommandException {
         // Validate the command format
         if(isInvalid(inputCommand)){
-            throw new CommandException("The command does't have the a valid format.");
+            throw new CommandException(MessageConstants.ERROR_COMMAND_INVALID_FORMAT);
         }
         String[] parts = inputCommand.split(" ");
         this.width = Integer.parseInt(parts[WIDTH_POSITION]);

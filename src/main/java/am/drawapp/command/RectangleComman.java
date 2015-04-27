@@ -59,7 +59,7 @@ public class RectangleComman extends AbstractCommand {
     @Override
     public void extract(String inputCommand) throws CommandException {
         if (isInvalid(inputCommand)) {
-            throw new CommandException("The command does't have the a valid format. ");
+            throw new CommandException(MessageConstants.ERROR_COMMAND_INVALID_FORMAT);
         }
         String[] parts = inputCommand.split(" ");
         int startPointX = Integer.parseInt(parts[START_POINT_X_POSITION]);
