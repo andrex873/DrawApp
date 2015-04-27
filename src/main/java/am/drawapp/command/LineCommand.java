@@ -37,6 +37,7 @@ public class LineCommand extends AbstractCommand{
         super(inputCommand);
     }
 
+    @Override
     public void extract(String inputCommand) throws CommandException {
         if (isInvalid(inputCommand)) {
             throw new CommandException(MessageConstants.ERROR_COMMAND_INVALID_FORMAT);

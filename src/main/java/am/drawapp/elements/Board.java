@@ -65,5 +65,9 @@ public class Board {
     public boolean isInitialized() {
         return initialized;
     }
+
+    public Map<Coordinate, Cell> getBoardMap() {
+        return boardMap;
+    }
     
 }
