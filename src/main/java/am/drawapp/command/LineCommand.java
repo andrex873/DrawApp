@@ -17,7 +17,7 @@ public class LineCommand extends AbstractCommand {
     /**
      * Pattern to validate the command input.
      */
-    private final String PATTERN = "^[L] [1-9]+ [1-9]+ [1-9]+ [1-9]+$";
+    private final String PATTERN = "^[L] [1-9][0-9]* [1-9][0-9]* [1-9][0-9]* [1-9][0-9]*$";
     
     /**
      * Represent the start X position in an array.

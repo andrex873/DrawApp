@@ -16,7 +16,7 @@ public class CanvasCommand extends AbstractCommand{
     /**
      * Pattern to validate the command input.
      */
-    private final String PATTERN = "^[C] [1-9]+ [1-9]+$";
+    private final String PATTERN = "^[C] [1-9][0-9]* [1-9][0-9]*$";
     
     /**
      * Represent the width position in an array.

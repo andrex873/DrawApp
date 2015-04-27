@@ -19,7 +19,7 @@ public class BucketFillCommand extends AbstractCommand {
     /**
      * Pattern to validate the command input.
      */
-    private final String PATTERN = "^[B] [1-9]+ [1-9]+ [a-zA-Z0-9]$";
+    private final String PATTERN = "^[B] [1-9][0-9]* [1-9][0-9]* [a-zA-Z0-9]$";
     
     /**
      * Represent the X position in an array.
