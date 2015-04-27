@@ -35,6 +35,10 @@ public class BucketFillTest {
         }
     }
 
+    /**
+     * Get the current board map of the board.
+     * @return board map.
+     */
     private Map<Coordinate, Cell> createBoardMap() {
         int width = 20;
         int height = 4;
@@ -47,6 +51,10 @@ public class BucketFillTest {
         return board.getBoardMap();
     }
 
+    /**
+     * Get the shape results coordinates.
+     * @return List coordinates.
+     */
     private List<Coordinate> getShapeResult() {
         List<Coordinate> result = new ArrayList<>();
         result.add(new Coordinate(1, 1));
