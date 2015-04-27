@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package am.drawapp.shape;
 
 import am.drawapp.elements.Coordinate;
@@ -11,10 +5,15 @@ import am.drawapp.elements.Cell;
 import java.util.Map;
 
 /**
- *
- * @author amendez
+ * Represent a shape.
+ * 
+ * @author Andrés Mendez Juanias.
  */
 public interface Shape {
     
+    /**
+     * Get the shape coordinates.
+     * @return Map of shape coordinates.
+     */
     public Map<Coordinate, Cell> getShapeCoordinates();
 }

@@ -1,18 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package am.drawapp.elements;
 
 /**
- *
- * @author amendez
+ * Class that represents a custom cell in the board.
+ * 
+ * @author Andrés Mendez Juanias.
  */
 public class CustomCell implements Cell {
 
+    /**
+     * Custom char in the cell.
+     */
     private final String character;
 
+    /**
+     * Initializes a new object of type CustomCell.
+     * @param character Custom character.
+     */
     public CustomCell(String character) {
         this.character = character;
     }

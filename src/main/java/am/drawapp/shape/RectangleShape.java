@@ -9,13 +9,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author amendez
+ * Class that represent a rectangle shape.
+ * 
+ * @author Andrés Mendez Juanias.
  */
 public class RectangleShape implements Shape {
 
+    /**
+     * The shape coordinates.
+     */
     private Map<Coordinate, Cell> shapeCoordinates;
 
+    /**
+     * Initializes a new object of type RectangleShape.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     */
     public RectangleShape(Coordinate startPoint, Coordinate endPoint) {
         if (isInvalid(startPoint, endPoint)) {
             throw new ShapeException(MessageConstants.ERROR_SHAPE_RECTANGLE_CORDINATES);
@@ -37,6 +46,12 @@ public class RectangleShape implements Shape {
         }
     }
 
+    /**
+     * Validate the coordinate.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     * @return True if the command is invalid or False otherwise.
+     */
     private boolean isInvalid(Coordinate startPoint, Coordinate endPoint) {
         return endPoint.getPointX() <= startPoint.getPointX() || endPoint.getPointY() <= startPoint.getPointY();
     }

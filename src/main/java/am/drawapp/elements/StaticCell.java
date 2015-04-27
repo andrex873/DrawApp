@@ -29,6 +29,12 @@ public enum StaticCell implements Cell{
         public String toString() {
             return "x";
         }
+    },
+    EMPTY_CHAR {
+        @Override
+        public String toString() {
+            return " ";
+        }
     };
     
 }

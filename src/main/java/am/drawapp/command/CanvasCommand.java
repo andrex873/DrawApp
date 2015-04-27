@@ -1,4 +1,3 @@
-
 package am.drawapp.command;
 
 import am.drawapp.elements.Board;
@@ -7,21 +6,41 @@ import am.drawapp.shape.BorderShape;
 import java.util.regex.Pattern;
 
 /**
- *
- * @author amendez
+ * The CanvasCommand represent a command as an object.
+ * 
+ * @author Andrés Méndez Juanias.
  */
 public class CanvasCommand extends AbstractCommand{
     
-    private final String PATTERN = "^[C] [0-9]+ [0-9]+$";
+    /**
+     * Pattern to validate the command input.
+     */
+    private final String PATTERN = "^[C] [1-9]+ [1-9]+$";
     
+    /**
+     * Represent the width position in an array.
+     */
     private final int WIDTH_POSITION = 1;
     
+    /**
+     * Represent the height position in an array.
+     */
     private final int HEIGHT_POSITION = 2;
     
+    /**
+     * Represent the width of the canvas.
+     */
     private int width; 
     
+    /**
+     * Represent the height of the canvas.
+     */
     private int height;
 
+    /**
+     * Initializes a new object of type CanvasCommand.
+     * @param inputCommand Command in string format.
+     */
     public CanvasCommand(String inputCommand) {
         super(inputCommand);
     }
@@ -37,6 +56,11 @@ public class CanvasCommand extends AbstractCommand{
         this.height = Integer.parseInt(parts[HEIGHT_POSITION]);
     }
 
+    /**
+     * Validate the input command.
+     * @param inputCommand Input command.
+     * @return True if the command is invalid or False otherwise.
+     */
     private boolean isInvalid(String inputCommand) {
         Pattern patter = Pattern.compile(PATTERN);
         return !patter.matcher(inputCommand).matches();

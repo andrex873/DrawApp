@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package am.drawapp.command;
 
 import am.drawapp.constants.CommandTypeEnum;
@@ -10,11 +5,16 @@ import am.drawapp.constants.MessageConstants;
 import am.drawapp.exception.CommandException;
 
 /**
- *
- * @author amendez
+ * Factory of commands.
+ * @author Andrés Méndez Juanias.
  */
 public class CommandFactory {
 
+    /**
+     * Build a new command object.
+     * @param inputCommand Input command.
+     * @return The new command created.
+     */
     public static DrawCommand build(String inputCommand) {
         CommandTypeEnum commandType = CommandTypeEnum.resolve(inputCommand);
         switch (commandType) {

@@ -13,24 +13,50 @@ import java.util.regex.Pattern;
  */
 public class RectangleComman extends AbstractCommand {
 
-    private final String PATTERN = "^[R] [0-9]+ [0-9]+ [0-9]+ [0-9]+$";
+    /**
+     * Pattern to validate the command input.
+     */
+    private final String PATTERN = "^[R] [1-9]+ [1-9]+ [1-9]+ [1-9]+$";
 
+    /**
+     * Represent the start X position in an array.
+     */
     private final int START_POINT_X_POSITION = 1;
 
+    /**
+     * Represent the start Y position in an array.
+     */
     private final int START_POINT_Y_POSITION = 2;
 
+    /**
+     * Represent the end X position in an array.
+     */
     private final int END_POINT_X_POSITION = 3;
 
+    /**
+     * Represent the end Y position in an array.
+     */
     private final int END_POINT_Y_POSITION = 4;
 
+    /**
+     * Represent the start coordinate of the command.
+     */
     private Coordinate startCoordinate;
 
+    /**
+     * Represent the end coordinate of the command.
+     */
     private Coordinate endCoordinate;
 
+    /**
+     * Initializes a new object of type RectangleComman.
+     * @param inputCommand Input command.
+     */
     public RectangleComman(String inputCommand) {
         super(inputCommand);
     }
 
+    @Override
     public void extract(String inputCommand) throws CommandException {
         if (isInvalid(inputCommand)) {
             throw new CommandException("The command does't have the a valid format. ");
@@ -44,6 +70,11 @@ public class RectangleComman extends AbstractCommand {
         endCoordinate = new Coordinate(endPointX, endPointY);
     }
 
+    /**
+     * Validate the input command.
+     * @param inputCommand Input command.
+     * @return True if the command is invalid or False otherwise.
+     */
     private boolean isInvalid(String inputCommand) {
         Pattern patter = Pattern.compile(PATTERN);
         return !patter.matcher(inputCommand).matches();

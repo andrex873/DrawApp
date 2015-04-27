@@ -7,13 +7,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Class that represent a Board shape.
  *
- * @author amendez
+ * @author Andrés Mendez Juanias.
  */
 public class BorderShape implements Shape {
 
+    /**
+     * The shape map for the border.
+     */
     private final Map<Coordinate, Cell> shapeMap;
 
+    /**
+     * Initializes a new object of type BorderShape.
+     * @param width Width of the border shape.
+     * @param height Height of the border shape.
+     */
     public BorderShape(int width, int height) {
         shapeMap = new HashMap<>();
         // Fill the vertical lines

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package am.drawapp.command;
 
 import am.drawapp.constants.MessageConstants;
@@ -14,25 +8,51 @@ import am.drawapp.shape.LineShape;
 import java.util.regex.Pattern;
 
 /**
- *
- * @author amendez
+ * The LineCommand represent a command as an object.
+ * 
+ * @author Andrés Méndez Juanias.
  */
-public class LineCommand extends AbstractCommand{
+public class LineCommand extends AbstractCommand {
     
-    private final String PATTERN = "^[L] [0-9]+ [0-9]+ [0-9]+ [0-9]+$";
+    /**
+     * Pattern to validate the command input.
+     */
+    private final String PATTERN = "^[L] [1-9]+ [1-9]+ [1-9]+ [1-9]+$";
     
+    /**
+     * Represent the start X position in an array.
+     */
     private final int START_POINT_X_POSITION = 1;
     
+    /**
+     * Represent the start Y position in an array.
+     */
     private final int START_POINT_Y_POSITION = 2;
     
+    /**
+     * Represent the end X position in an array.
+     */
     private final int END_POINT_X_POSITION = 3;
     
+    /**
+     * Represent the end Y position in an array.
+     */
     private final int END_POINT_Y_POSITION = 4;
     
+    /**
+     * Represent the start coordinate of the command.
+     */
     private Coordinate startCoordinate;
     
+    /**
+     * Represent the end coordinate of the command.
+     */
     private Coordinate endCoordinate;
     
+    /**
+     * Initializes a new object of type LineCommand.
+     * @param inputCommand Input command.
+     */
     public LineCommand(String inputCommand) {
         super(inputCommand);
     }
@@ -52,6 +72,11 @@ public class LineCommand extends AbstractCommand{
         
     }
     
+    /**
+     * Validate the input command.
+     * @param inputCommand Input command.
+     * @return True if the command is invalid or False otherwise.
+     */
     private boolean isInvalid(String inputCommand) {
         Pattern patter = Pattern.compile(PATTERN);
         return !patter.matcher(inputCommand).matches();

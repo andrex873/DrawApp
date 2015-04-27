@@ -7,13 +7,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author amendez
+ * Class that represent a line shape.
+ * 
+ * @author Andrés Mendez Juanias.
  */
 public class LineShape implements Shape {
 
+    /**
+     * The shape coordinates.
+     */
     private final Map<Coordinate, Cell> shapeCoordinates;
 
+    /**
+     * Initializes a new object of type LineShape.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     */
     public LineShape(Coordinate startPoint, Coordinate endPoint) {
         shapeCoordinates = new HashMap<>();
         int minX = getMinX(startPoint, endPoint);
@@ -38,30 +47,58 @@ public class LineShape implements Shape {
         return shapeCoordinates;
     }
 
-    
+    /**
+     * Get the min point x.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     * @return The min x point.
+     */
     private int getMinX(Coordinate startPoint, Coordinate endPoint) {
         return startPoint.getPointX() < endPoint.getPointX() ? startPoint.getPointX() : endPoint.getPointX();
     }
 
+    /**
+     * Get the max point x.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     * @return The max x point.
+     */
     private int getMaxX(Coordinate startPoint, Coordinate endPoint) {
         return startPoint.getPointX() > endPoint.getPointX() ? startPoint.getPointX() : endPoint.getPointX();
     }
 
+    /**
+     * Get the min point Y.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     * @return The min Y point.
+     */
     private int getMinY(Coordinate startPoint, Coordinate endPoint) {
         return startPoint.getPointY() < endPoint.getPointY() ? startPoint.getPointY() : endPoint.getPointY();
     }
 
+    /**
+     * Get the max point Y.
+     * @param startPoint Start coordinate.
+     * @param endPoint End coordinate.
+     * @return The max Y point.
+     */
     private int getMaxY(Coordinate startPoint, Coordinate endPoint) {
         return startPoint.getPointY() > endPoint.getPointY() ? startPoint.getPointY() : endPoint.getPointY();
     }
 
+    /**
+     * Get the horizontal x point.
+     * @param start Start coordinate.
+     * @param end End coordinate.
+     * @return The horizontal X point.
+     */
     private int getHorizontalX(Coordinate start, Coordinate end) {
         if(shapeCoordinates.keySet().contains(start)){
             return end.getPointX();
         } else {
             return start.getPointX();
         }
-        
     }
 
 }

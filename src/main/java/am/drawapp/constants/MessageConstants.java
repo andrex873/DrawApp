@@ -1,9 +1,9 @@
-
 package am.drawapp.constants;
 
 /**
  * Contain all messages in DrawApp.
- * @author Andés Méndez Juanias <andrex873@gmail.com>
+ * 
+ * @author Andés Méndez Juanias.
  */
 public class MessageConstants {
     
