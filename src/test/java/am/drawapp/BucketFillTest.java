@@ -21,10 +21,10 @@ import org.junit.Test;
  * 
  * @author Andrés Méndez Juanias.
  */
-public class BucketFillTests {
+public class BucketFillTest {
     
     @Test
-    public void BucketFillTests(){
+    public void BucketFill(){
         List<Coordinate> shapeResult = getShapeResult();
         Coordinate c1 = new Coordinate(10, 3);
         Cell colour = new CustomCell("o");
